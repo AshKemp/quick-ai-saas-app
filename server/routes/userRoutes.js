@@ -3,8 +3,8 @@ import {
   getPublishedCreations,
   getUserCreations,
   toggleLikeCreations,
-} from "../controllers/userController";
-import { auth } from "../middlewares/auth";
+} from "../controllers/userController.js";
+import { auth } from "../middlewares/auth.js";
 
 const userRouter = express.Router();
 
