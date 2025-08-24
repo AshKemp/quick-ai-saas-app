@@ -206,7 +206,7 @@ export const removeImageObject = async (req, res) => {
 export const reviewResume = async (req, res) => {
   try {
     const { userId } = req.auth;
-    const { resume } = req.file;
+    const resume = req.file;
     const plan = req.plan;
 
     if (plan !== "premium") {

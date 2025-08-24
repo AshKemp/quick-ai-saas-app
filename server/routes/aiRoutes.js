@@ -27,6 +27,6 @@ aiRouter.post(
   auth,
   removeImageObject
 );
-aiRouter.post("/resume-review", upload.single("image"), auth, reviewResume);
+aiRouter.post("/resume-review", upload.single("resume"), auth, reviewResume);
 
 export default aiRouter;
