@@ -32,8 +32,8 @@ export const toggleLikeCreations = async (req, res) => {
     }
     const currentLikes = creation.likes;
     const userIdStr = userId.toString();
-    let updatedLikes;
-
+    let message = "";
+    let updatedLikes = [];
     if (currentLikes.includes(userIdStr)) {
       // Unlike
       updatedLikes = currentLikes.filter((uid) => uid !== userIdStr);
@@ -43,7 +43,6 @@ export const toggleLikeCreations = async (req, res) => {
       updatedLikes = [...currentLikes, userIdStr];
       message = "Creation liked";
     }
-
     const formattedArray = `{${updatedLikes.join(",")}}`;
 
     await sql`UPDATE creations SET likes=${formattedArray}::text[] where id=${id}`;
